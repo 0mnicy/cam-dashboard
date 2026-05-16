@@ -1,0 +1,59 @@
+{
+    "blueiris": {
+        "host": "10.10.0.20",
+        "port": 81,
+        "protocol": "http"
+    },
+    "layout": {
+        "columns": 4,
+        "defaultSize": "small",
+        "gutter": "6px"
+    },
+    "cameras": [
+        {
+            "name": "CAM1",
+            "label": "Front Door",
+            "size": "large"
+        },
+        {
+            "name": "CAM2",
+            "label": "Backyard",
+            "size": "small"
+        },
+        {
+            "name": "CAM3",
+            "label": "Garage",
+            "size": "small"
+        },
+        {
+            "name": "CAM4",
+            "label": "Driveway",
+            "size": "small"
+        },
+        {
+            "name": "CAM5",
+            "label": "Side Yard",
+            "size": "small"
+        },
+        {
+            "name": "CAM6",
+            "label": "Patio",
+            "size": "small"
+        }
+    ],
+    "widgets": {
+        "clock": true,
+        "date": true,
+        "weather": {
+            "enabled": true,
+            "location": "Charlotte",
+            "country": "US",
+            "unit": "imperial"
+        }
+    },
+    "refresh": {
+        "mjpgInterval": 5000,
+        "weatherInterval": 900000,
+        "timestampFormat": "YYYY-MM-DD HH:mm:ss"
+    }
+}

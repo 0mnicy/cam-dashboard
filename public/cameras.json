@@ -1,0 +1,33 @@
+{
+  "blueiris": {
+    "host": "10.10.0.20",
+    "port": 81,
+    "auth": {
+      "enabled": false,
+      "username": "",
+      "password": ""
+    }
+  },
+  "layout": {
+    "columns": 4,
+    "large": "2x2",
+    "small": "1x1",
+    "gutter": "4px",
+    "backgroundColor": "#0a0a0a",
+    "cameraLabelColor": "#ffffff",
+    "cameraLabelBg": "rgba(0,0,0,0.6)"
+  },
+  "cameras": [
+    { "name": "CAM1", "label": "Front Door", "size": "large" },
+    { "name": "CAM2", "label": "Backyard", "size": "small" },
+    { "name": "CAM3", "label": "Garage", "size": "small" },
+    { "name": "CAM4", "label": "Driveway", "size": "small" },
+    { "name": "CAM5", "label": "Side Gate", "size": "small" },
+    { "name": "CAM6", "label": "Patio", "size": "small" }
+  ],
+  "widgets": [
+    { "type": "clock", "format": "12h" },
+    { "type": "date" },
+    { "type": "weather", "api_key": "", "location": "" }
+  ]
+}
