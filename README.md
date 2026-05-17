@@ -38,7 +38,7 @@ Lightweight, self-hosted security camera dashboard with individual camera tiles,
 ┌─────────────────────────────────────────────────────────────┐
 │              BlueIris PC (10.10.0.20:81)                   │
 │                                                             │
-│  http://10.10.0.20:81/cameras/<name>/mjpg/webcam.cgi      │
+│  http://10.10.0.20:81/mjpg/<name>/webcam.cgi      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -59,9 +59,13 @@ Edit `config/cameras.json` with your actual BlueIris camera names:
         "defaultSize": "small"
     },
     "cameras": [
-        { "name": "FrontDoor", "label": "Front Door", "size": "large" },
+        { "name": "RoadCam", "label": "Road Cam", "size": "large" },
         { "name": "Backyard", "label": "Backyard", "size": "small" },
-        { "name": "Garage", "label": "Garage", "size": "small" }
+        { "name": "FrntDoor", "label": "Front Door", "size": "small" },
+        { "name": "Entr", "label": "Entrance", "size": "small" },
+        { "name": "RoadEntr", "label": "Road Entrance", "size": "small" },
+        { "name": "Court", "label": "Court", "size": "small" },
+        { "name": "CarportCam", "label": "Carport", "size": "small" }
     ]
 }
 ```
@@ -70,18 +74,25 @@ Edit `config/cameras.json` with your actual BlueIris camera names:
 
 ### 2. Deploy
 
-**Option A: Python HTTP Server** (recommended)
+**Option A: Python HTTP Server (recommended)**
 ```bash
-./deploy.sh --target python
+# Copy files to display PC
+scp -r public/ config/cameras.json server.py omnicy@10.10.0.241:~/cam-dashboard/
+
+# Start server on display PC
+ssh omnicy@10.10.0.241 'cd ~/cam-dashboard && python3 server.py &'
+
+# Open in Firefox
+firefox http://localhost:8888/
 ```
 
 **Option B: Manual Deploy**
 ```bash
 # Copy files to display PC
-scp -r public/ cameras.json omnicy@10.10.0.241:~/cam-dashboard/
+scp -r public/ config/cameras.json server.py omnicy@10.10.0.241:~/cam-dashboard/
 
 # Start server on display PC
-ssh omnicy@10.10.0.241 'cd ~/cam-dashboard && python3 -m http.server 8888 &'
+ssh omnicy@10.10.0.241 'cd ~/cam-dashboard && python3 server.py &'
 
 # Open in Firefox
 firefox http://localhost:8888/
@@ -190,7 +201,7 @@ server {
 ### Cameras not loading
 
 1. Verify camera names match BlueIris config
-2. Test MJPEG URL directly: `http://10.10.0.20:81/cameras/CAM1/mjpg/webcam.cgi`
+2. Test MJPEG URL directly: `http://10.10.0.20:81/mjpg/RoadCam/webcam.cgi`
 3. Check BlueIris is running and cameras are active
 4. Check browser console for errors (F12)
 
@@ -213,7 +224,7 @@ server {
 cam-dashboard/
 ├── ARCHITECTURE.md      # Full system architecture
 ├── README.md            # This file
-├── deploy.sh            # Deployment script
+├── server.py            # Simple Python HTTP server
 ├── config/
 │   └── cameras.json     # Camera list and layout config
 ├── public/
