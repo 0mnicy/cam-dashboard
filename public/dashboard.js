@@ -179,8 +179,8 @@
         const base = `${bi.protocol}://${bi.host}`;
         const port = bi.port !== 80 && bi.port !== 443 ? `:${bi.port}` : '';
 
-        // Try MJPEG webcam endpoint
-        return `${base}${port}/cameras/${camera.name}/mjpg/webcam.cgi`;
+        // Use BlueIris MJPEG webcam endpoint
+        return `${base}${port}/mjpg/${camera.name}/webcam.cgi`;
     }
 
     function refreshMJPEGStream(index, camera) {

@@ -11,33 +11,38 @@
     },
     "cameras": [
         {
-            "name": "CAM1",
-            "label": "Front Door",
+            "name": "RoadCam",
+            "label": "Road Cam",
             "size": "large"
         },
         {
-            "name": "CAM2",
+            "name": "Backyard",
             "label": "Backyard",
             "size": "small"
         },
         {
-            "name": "CAM3",
-            "label": "Garage",
+            "name": "FrntDoor",
+            "label": "Front Door",
             "size": "small"
         },
         {
-            "name": "CAM4",
-            "label": "Driveway",
+            "name": "Entr",
+            "label": "Entrance",
             "size": "small"
         },
         {
-            "name": "CAM5",
-            "label": "Side Yard",
+            "name": "RoadEntr",
+            "label": "Road Entrance",
             "size": "small"
         },
         {
-            "name": "CAM6",
-            "label": "Patio",
+            "name": "Court",
+            "label": "Court",
+            "size": "small"
+        },
+        {
+            "name": "CarportCam",
+            "label": "Carport",
             "size": "small"
         }
     ],
