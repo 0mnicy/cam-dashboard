@@ -110,7 +110,7 @@
 
         config.cameras.forEach((camera, index) => {
             const tile = document.createElement('div');
-            tile.className = `tile ${camera.size || config.layout.defaultSize || 'small'}`;
+            tile.className = 'tile';
             tile.dataset.cameraIndex = index;
 
             // Tile header

@@ -6,44 +6,36 @@
     },
     "layout": {
         "columns": 4,
-        "defaultSize": "small",
         "gutter": "6px"
     },
     "cameras": [
         {
             "name": "RoadCam",
-            "label": "Road Cam",
-            "size": "large"
+            "label": "Road Cam"
         },
         {
             "name": "Backyard",
-            "label": "Backyard",
-            "size": "small"
+            "label": "Backyard"
         },
         {
             "name": "FrntDoor",
-            "label": "Front Door",
-            "size": "small"
+            "label": "Front Door"
         },
         {
             "name": "Entr",
-            "label": "Entrance",
-            "size": "small"
+            "label": "Entrance"
         },
         {
             "name": "RoadEntr",
-            "label": "Road Entrance",
-            "size": "small"
+            "label": "Road Entrance"
         },
         {
             "name": "Court",
-            "label": "Court",
-            "size": "small"
+            "label": "Court"
         },
         {
             "name": "CarportCam",
-            "label": "Carport",
-            "size": "small"
+            "label": "Carport"
         }
     ],
     "widgets": {

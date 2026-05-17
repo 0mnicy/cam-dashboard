@@ -56,16 +56,16 @@ Edit `config/cameras.json` with your actual BlueIris camera names:
     },
     "layout": {
         "columns": 4,
-        "defaultSize": "small"
+        "gutter": "6px"
     },
     "cameras": [
-        { "name": "RoadCam", "label": "Road Cam", "size": "large" },
-        { "name": "Backyard", "label": "Backyard", "size": "small" },
-        { "name": "FrntDoor", "label": "Front Door", "size": "small" },
-        { "name": "Entr", "label": "Entrance", "size": "small" },
-        { "name": "RoadEntr", "label": "Road Entrance", "size": "small" },
-        { "name": "Court", "label": "Court", "size": "small" },
-        { "name": "CarportCam", "label": "Carport", "size": "small" }
+        { "name": "RoadCam", "label": "Road Cam" },
+        { "name": "Backyard", "label": "Backyard" },
+        { "name": "FrntDoor", "label": "Front Door" },
+        { "name": "Entr", "label": "Entrance" },
+        { "name": "RoadEntr", "label": "Road Entrance" },
+        { "name": "Court", "label": "Court" },
+        { "name": "CarportCam", "label": "Carport" }
     ]
 }
 ```
@@ -116,11 +116,10 @@ For always-on display:
 | `blueiris.host` | string | "10.10.0.20" | BlueIris server IP |
 | `blueiris.port` | number | 81 | BlueIris server port |
 | `blueiris.protocol` | string | "http" | http or https |
-| `layout.columns` | number | 4 | Grid columns |
-| `layout.defaultSize` | string | "small" | Default tile size |
+| `layout.columns` | number | 4 | Number of tile columns (2-8) |
+| `layout.gutter` | string | "6px" | Spacing between tiles |
 | `cameras[].name` | string | **required** | Camera name (from BlueIris) |
 | `cameras[].label` | string | name | Display label |
-| `cameras[].size` | string | "small" | "small" or "large" (2×2) |
 | `widgets.clock` | boolean | true | Show clock |
 | `widgets.date` | boolean | true | Show date |
 | `widgets.weather.enabled` | boolean | true | Show weather |
@@ -128,10 +127,9 @@ For always-on display:
 | `refresh.mjpgInterval` | number | 5000 | MJPEG refresh ms |
 | `refresh.weatherInterval` | number | 900000 | Weather refresh ms |
 
-### Tile Sizes
+### Tile Sizing
 
-- `small`: 1×1 grid cell
-- `large`: 2×2 grid cell (spans 2 columns × 2 rows)
+All tiles are uniform — the grid automatically fills the screen with equally-sized tiles. The `columns` setting controls how many tiles fit across the width. More columns = smaller tiles, fewer columns = larger tiles.
 
 ## Deployment Options
 
@@ -184,8 +182,8 @@ server {
 ## Features
 
 - ✅ **Individual camera tiles** — each camera as its own tile
-- ✅ **Configurable grid** — 2-6 column layouts
-- ✅ **Mixed tile sizes** — large (2×2) and small (1×1) tiles
+- ✅ **Configurable grid** — 2-8 column layouts, adjustable gutter spacing
+- ✅ **Uniform tile sizing** — all tiles same size, grid fills the screen
 - ✅ **Real-time MJPEG streams** — 5-second refresh interval
 - ✅ **Connection status indicators** — green/red status dots
 - ✅ **Live timestamps** — per-camera and global

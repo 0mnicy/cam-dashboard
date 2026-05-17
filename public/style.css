@@ -127,15 +127,16 @@ html, body {
     overflow: hidden;
 }
 
-/* Grid layout based on config */
-#camera-grid.layout-4col { grid-template-columns: repeat(4, 1fr); }
-#camera-grid.layout-3col { grid-template-columns: repeat(3, 1fr); }
+/* Grid layout based on columns config */
 #camera-grid.layout-2col { grid-template-columns: repeat(2, 1fr); }
+#camera-grid.layout-3col { grid-template-columns: repeat(3, 1fr); }
+#camera-grid.layout-4col { grid-template-columns: repeat(4, 1fr); }
 #camera-grid.layout-5col { grid-template-columns: repeat(5, 1fr); }
-
 #camera-grid.layout-6col { grid-template-columns: repeat(6, 1fr); }
+#camera-grid.layout-7col { grid-template-columns: repeat(7, 1fr); }
+#camera-grid.layout-8col { grid-template-columns: repeat(8, 1fr); }
 
-/* Tile sizing */
+/* Tile sizing — all tiles same size */
 .tile {
     position: relative;
     background: var(--bg-card);
@@ -150,11 +151,6 @@ html, body {
 .tile:hover {
     border-color: var(--accent-dim);
     box-shadow: 0 0 0 1px var(--accent-dim);
-}
-
-.tile.large {
-    grid-column: span 2;
-    grid-row: span 2;
 }
 
 /* ── Tile Header ── */
